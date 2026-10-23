@@ -35,24 +35,26 @@ The model consists of two interconnected subsystems:
 
 ### Control Strategy
 
-The measured water level is compared with the reference setpoint to generate an error signal:
+The system compares the desired water level with the actual water level to calculate the error.
 
-\[
-e(t) = h_{\mathrm{ref}} - h(t)
-\]
+**Error = Desired Water Level − Actual Water Level**
 
-The PID controller processes the error and generates a control signal for the inlet valve.
+The PI controller uses this error to adjust the inlet valve and maintain the desired water level.
 
-The controller uses the parallel PID formulation:
+The controller output is calculated as:
 
-\[
-u(t) = K_p e(t) + K_i \int e(t)\,dt + K_d \frac{de(t)}{dt}
-\]
+**Controller Output = (Kp × Error) + (Ki × Integral of Error)**
 
-where:
-- \(h_{\mathrm{ref}}\) is the reference water level.
-- \(h(t)\) is the measured water level.
-- \(K_p\), \(K_i\), and \(K_d\) are the PID controller gains.
+Where:
+- **Desired Water Level:** The target water level (0.35 m).
+- **Actual Water Level:** The current measured water level.
+- **Error:** The difference between the desired and actual water levels.
+- **Kp:** Proportional gain (5).
+- **Ki:** Integral gain (0.2).
+
+The proportional term responds to the current error, while the integral term helps eliminate persistent error over time.
+
+**Controller Type:** PI Controller (Proportional–Integral).
 
 ## Simulation Configuration
 
