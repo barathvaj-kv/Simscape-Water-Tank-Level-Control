@@ -87,14 +87,6 @@ The simulated liquid volume increases during filling, reaches a peak, and gradua
 
 ### Simulation Visualizations
 
-Add the following images to the `images/` directory:
-
-| Visualization | File |
-|---|---|
-| Complete Simulink model | `images/system_model.png` |
-| Water level response | `images/level_response.png` |
-| Water volume response | `images/volume_response.png` |
-
 #### System Model
 
 ![System Model](https://github.com/barathvaj-kv/Simscape-Water-Tank-Level-Control/blob/86f7c492edfca11eae9e6903bdf8f66e29bf1315/Images/system_model.png)
